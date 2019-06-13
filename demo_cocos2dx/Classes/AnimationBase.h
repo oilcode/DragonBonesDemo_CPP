@@ -51,21 +51,19 @@ protected:
     }
 
 private:
-    void _mouseDownHandler(cocos2d::Event* eventP)
+    void _mouseDownHandler(cocos2d::EventMouse* event)
     {
-		cocos2d::EventMouse* event = (cocos2d::EventMouse*)eventP;
         const auto progress = std::min(std::max((event->getCursorX() - getPosition().x + 300.0f) / 600.0f, 0.0f), 1.0f);
         _armatureDisplay->getAnimation()->gotoAndStopByProgress("idle", progress);
     }
 
-    void _mouseUpHandler(cocos2d::Event* eventP)
+    void _mouseUpHandler(cocos2d::EventMouse* event)
     {
         _armatureDisplay->getAnimation()->play();
     }
 
-    void _mouseMovedHandler(cocos2d::Event* eventP)
+    void _mouseMovedHandler(cocos2d::EventMouse* event)
     {
-		cocos2d::EventMouse* event = (cocos2d::EventMouse*)eventP;
         if (event->getMouseButton() != cocos2d::EventMouse::MouseButton::BUTTON_UNSET)
         {
             return;

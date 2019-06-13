@@ -28,9 +28,9 @@ public:
     void enableDrag(cocos2d::Node* displayObject)
     {
         const auto listener = cocos2d::EventListenerMouse::create();
-        //listener->onMouseDown = CC_CALLBACK_1(DragHelper::_mouseDownHandler, this);
-        //listener->onMouseUp = CC_CALLBACK_1(DragHelper::_mouseUpHandler, this);
-        //listener->onMouseMove = CC_CALLBACK_1(DragHelper::_mouseMovedHandler, this);
+        listener->onMouseDown = CC_CALLBACK_1(DragHelper::_mouseDownHandler, this);
+        listener->onMouseUp = CC_CALLBACK_1(DragHelper::_mouseUpHandler, this);
+        listener->onMouseMove = CC_CALLBACK_1(DragHelper::_mouseMovedHandler, this);
         displayObject->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, displayObject);
     }
 

@@ -55,7 +55,7 @@ protected:
     }
 
 private:
-    void _mouseDownHandler(cocos2d::Event* eventP)
+    void _mouseDownHandler(cocos2d::EventMouse* event)
     {
         _changeAnimation();
     }

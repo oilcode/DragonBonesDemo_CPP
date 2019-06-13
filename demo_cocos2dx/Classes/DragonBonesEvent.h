@@ -35,7 +35,7 @@ protected:
         addChild(_armatureDisplay);
         //
         const auto listener = cocos2d::EventListenerMouse::create();
-        //listener->onMouseDown = CC_CALLBACK_1(DragonBonesEvent::_mouseDownHandler, this);
+        listener->onMouseDown = CC_CALLBACK_1(DragonBonesEvent::_mouseDownHandler, this);
         getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
         //
         createText("Touch to play animation.");

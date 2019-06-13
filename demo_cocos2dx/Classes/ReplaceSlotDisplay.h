@@ -42,7 +42,7 @@ protected:
         addChild(_armatureDisplay);
         //
         const auto listener = cocos2d::EventListenerMouse::create();
-        //listener->onMouseDown = CC_CALLBACK_1(ReplaceSlotDisplay::_mouseDownHandler, this);
+        listener->onMouseDown = CC_CALLBACK_1(ReplaceSlotDisplay::_mouseDownHandler, this);
         getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
         //
         createText("Touch screen left / center / right to relace slot display.");

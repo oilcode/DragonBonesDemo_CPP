@@ -93,7 +93,7 @@ protected:
         }
         //
         const auto listener = cocos2d::EventListenerMouse::create();
-        //listener->onMouseDown = CC_CALLBACK_1(ReplaceSkin::_mouseDownHandler, this);
+        listener->onMouseDown = CC_CALLBACK_1(ReplaceSkin::_mouseDownHandler, this);
         getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
         //
         createText("Touch to replace armature skin.");
